@@ -1,0 +1,5 @@
+# Remove all the tar files
+*.tar.gz
+
+# Remove all the elk-loadtest-files/
+elk-loadtest-files/
