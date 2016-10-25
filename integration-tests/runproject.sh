@@ -70,8 +70,8 @@ fi
 
 pushd /tmp
 # Check for maven deps -- to be cloned and installed
-check_gitclone_or_gitpull https://github.com/manjunathy-ezdi/Spring-Session-Common.git
-pushd Spring-Session-Common/ezSpringSessionCommon
+check_gitclone_or_gitpull https://github.com/Mediscribes/repezCACCore.git
+pushd repezCACCore/ezSpringSessionCommon
 mvn install
 
 popd
@@ -85,4 +85,3 @@ popd
 # check_gitclone_or_gitpull https://github.com/Mediscribes/repezPaaSPoC.git
 cd ../$PROJECT_TO_RUN
 mvn spring-boot:run -Drun.jvmArguments="-Dspring.profiles.active=int"
-
