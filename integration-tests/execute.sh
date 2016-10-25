@@ -6,9 +6,9 @@ USERTOLOG="ubuntu"
 PEMFILE=~/.keys/cac-int-ops.pem
 
 # remove script name from the arguments
-shift 1
+#shift 1
 
-if [[ -z "$SCRIPT_NAME" ]]
+if [[ -z "$1" ]]
 then
 	echo "Please give the script name and the parameters"
 	exit 0
@@ -26,7 +26,7 @@ ssh -i $PEMFILE $USERTOLOG@$HOST "
 	SCRIPT_URL=https://github.com/ganeshs-ezdi/aws-scripts.git
 	SCRIPT_DIR=$(basename $SCRIPT_URL .git)
 
-	if [[ ! -d "$SCRIPT_DIR" ]]
+	if [ ! -d "$SCRIPT_DIR" ]
 	then
 		echo Git cloning the URL=$SCRIPT_URL
 		git clone $SCRIPT_URL
