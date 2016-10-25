@@ -68,16 +68,21 @@ then
   sudo DEBIAN_FRONTEND=noninteractive apt-get install git --yes
 fi
 
+pushd /tmp
 # Check for maven deps -- to be cloned and installed
 check_gitclone_or_gitpull https://github.com/manjunathy-ezdi/Spring-Session-Common.git
-cd Spring-Session-Common/ezSpringSessionCommon
+pushd Spring-Session-Common/ezSpringSessionCommon
 mvn install
+
+popd
+popd
 
 # Runtime deps -- checks for environment variables
 # Configurations
 
 # Clone the repo, build and run it
 # Execution
-check_gitclone_or_gitpull https://github.com/Mediscribes/repezPaaSPoC.git
-cd $PROJECT_TO_RUN
-mvn spring-boot:run
+# check_gitclone_or_gitpull https://github.com/Mediscribes/repezPaaSPoC.git
+cd ../$PROJECT_TO_RUN
+mvn spring-boot:run -Drun.jvmArguments="-Dspring.profiles.active=int"
+
