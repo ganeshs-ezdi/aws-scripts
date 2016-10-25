@@ -2,6 +2,6 @@
 
 pgrep -fa python
 
-pkill python
+pkill -f python
 
 

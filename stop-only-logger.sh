@@ -1,5 +1,7 @@
-#! /bin/bash
+set -o verbose
+pkill -f 'python.*random.*'
 
-pgrep 'python.*random-logger.py'
-pkill 'python.*random-logger.py'
+#! /bin/bash
+#pgrep 'python.*random.*'
+
 
